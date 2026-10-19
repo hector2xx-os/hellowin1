@@ -1,0 +1,54 @@
+.titulo{font-size:clamp(2.4rem,10vw,4rem)}
+label{display:block;text-align:left;color:var(--suave);font-weight:800;margin-bottom:4px}
+input,select{width:100%;padding:10px 12px;border:2px solid #5a2f86;border-radius:10px;background:rgba(0,0,0,.4);color:var(--texto);font:inherit}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+button{padding:10px 20px;border:0;border-radius:99px;background:var(--naranja);color:#1a0b2b;font:inherit;font-weight:800;cursor:pointer}
+button:hover{background:#ffa14d}
+button.sec{background:transparent;border:1px solid var(--morado);color:var(--morado)}
+button.sec:hover{background:var(--morado);color:#1a0b2b}
+#form-login{max-width:340px;margin:0 auto;display:grid;gap:10px}
+.error{color:#ff7a70;margin:0;min-height:1.5em}
+.resumen{display:flex;justify-content:center;gap:16px;margin-top:24px}
+.resumen div{min-width:140px;padding:14px;border:2px solid var(--naranja);border-radius:14px;background:rgba(0,0,0,.3)}
+.resumen b{display:block;font-size:2rem;color:var(--naranja)}
+.resumen small{color:var(--suave)}
+.alta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;align-items:end}
+.barra{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.barra input{flex:1 1 220px;width:auto}
+.tabla-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;text-align:left}
+th,td{padding:10px 8px;border-bottom:1px solid #5a2f86}
+th{color:var(--morado)}
+td button{padding:4px 12px;background:transparent;border:1px solid #ff7a70;color:#ff7a70}
+td button:hover{background:#ff7a70;color:#1a0b2b}
+.suave{color:var(--suave)}
+
+/* Pestañas */
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:8px}
+.tab{background:transparent;border:1px solid var(--naranja);color:var(--naranja)}
+.tab:hover,.tab.activa{background:var(--naranja);color:#1a0b2b}
+.tab.sec{border-color:var(--morado);color:var(--morado)}
+.tab.sec:hover{background:var(--morado);color:#1a0b2b}
+.centro{justify-content:center}
+
+/* Boleto con QR */
+.ticket{margin:24px auto 0;max-width:340px;padding:20px;border:2px solid var(--naranja);border-radius:16px;background:rgba(0,0,0,.4)}
+.ticket h3{margin:0 0 12px}
+.qr{display:inline-block;padding:14px;background:#fff;border-radius:12px}
+.qr img,.qr canvas{display:block;max-width:100%}
+.codigo{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:var(--suave);word-break:break-all}
+.ticket button{margin:4px}
+
+/* Escáner y resultados */
+.lector{max-width:360px;margin:0 auto 14px;border-radius:12px;overflow:hidden}
+.resultado{max-width:420px;margin:16px auto 0}
+.res{padding:16px;border-radius:14px;border:2px solid;font-weight:800}
+.res h3{margin:0 0 6px;font-size:1.4rem}
+.res p{margin:0 0 10px;font-weight:600}
+.res-valido{border-color:#3ddc84;background:rgba(61,220,132,.12);color:#8ff0b8}
+.res-usado{border-color:var(--naranja);background:rgba(255,138,31,.12);color:#ffc48a}
+.res-falso{border-color:#ff5a4f;background:rgba(255,90,79,.14);color:#ff9d96}
+.verif{max-width:420px;margin:0 auto;display:grid;gap:10px}
+
+.res-entrada{border-color:#3ddc84;background:rgba(61,220,132,.12);color:#8ff0b8}
+.res-error{border-color:var(--naranja);background:rgba(255,138,31,.12);color:#ffc48a}

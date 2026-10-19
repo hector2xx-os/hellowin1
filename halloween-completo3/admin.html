@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Administración · Halloween Party</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Eater&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<main>
+<p><a class="admin-btn" href="index.html">Volver al evento</a></p>
+<h1 class="titulo">Administración</h1>
+
+<section id="login">
+<h2>Inicia sesión</h2>
+<form id="form-login">
+<label for="correo">Correo</label>
+<input id="correo" type="email" autocomplete="username" required>
+<label for="clave">Contraseña</label>
+<input id="clave" type="password" autocomplete="current-password" required>
+<button type="submit">Entrar</button>
+<p id="error-login" class="error" role="alert"></p>
+</form>
+</section>
+
+<section id="panel" hidden>
+<nav class="tabs" aria-label="Herramientas">
+<button type="button" class="tab activa" data-tab="invitados">Invitados y QR</button>
+<button type="button" class="tab" data-tab="escaner">Escanear</button>
+<button type="button" class="tab" data-tab="verificar">Verificar código</button>
+<button type="button" class="tab sec" id="salir">Cerrar sesión</button>
+</nav>
+
+<!-- INVITADOS -->
+<div id="tab-invitados">
+<div class="resumen">
+<div><b id="t-invitados">0</b><small>boletos vendidos</small></div>
+<div><b id="t-entradas">0</b><small>ya entraron</small></div>
+<div><b id="t-dinero">$0</b><small>recaudado</small></div>
+</div>
+
+<h2>Registrar compra y crear QR</h2>
+<form id="form-invitado" class="alta">
+<div><label for="nombre">Nombre</label><input id="nombre" required></div>
+<div><label for="telefono">Teléfono</label><input id="telefono" inputmode="tel"></div>
+<div><label for="fase">Fase</label>
+<select id="fase">
+<option value="150">Fase 1 · $150</option>
+<option value="180" selected>Fase 2 · $180</option>
+<option value="200">Día del evento · $200</option>
+</select></div>
+<button type="submit">Crear boleto</button>
+</form>
+
+<div id="ticket" class="ticket" hidden>
+<h3 id="ticket-nombre"></h3>
+<div id="qr" class="qr"></div>
+<p id="ticket-codigo" class="codigo"></p>
+<button type="button" id="bajar-qr">Descargar invitación</button>
+<button type="button" id="cerrar-ticket" class="sec">Cerrar</button>
+</div>
+
+<h2>Lista de invitados</h2>
+<div class="barra">
+<input id="buscar" type="search" placeholder="Buscar por nombre o teléfono" aria-label="Buscar invitado">
+<button type="button" id="actualizar" class="sec">Actualizar</button>
+<button type="button" id="exportar" class="sec">Descargar CSV</button>
+</div>
+<div class="tabla-wrap">
+<table>
+<thead><tr><th>Nombre</th><th>Teléfono</th><th>Boleto</th><th>Estado</th><th></th></tr></thead>
+<tbody id="lista"></tbody>
+</table>
+</div>
+<p id="vacio" class="suave">Aún no hay invitados registrados.</p>
+</div>
+
+<!-- ESCANER -->
+<div id="tab-escaner" hidden>
+<h2>Escanear boleto</h2>
+<p class="suave">Apunta la cámara al QR del invitado.</p>
+<div id="lector" class="lector"></div>
+<div class="barra centro">
+<button type="button" id="iniciar-scan">Iniciar cámara</button>
+<button type="button" id="parar-scan" class="sec" hidden>Detener</button>
+</div>
+<div id="res-scan" class="resultado" role="status" aria-live="polite"></div>
+</div>
+
+<!-- VERIFICAR -->
+<div id="tab-verificar" hidden>
+<h2>Verificar código</h2>
+<form id="form-verificar" class="verif">
+<label for="codigo-manual">Código del boleto</label>
+<input id="codigo-manual" placeholder="HLW-XXXXXXXXXX.xxxxxxxxxxxx" autocomplete="off" required>
+<button type="submit">Verificar</button>
+</form>
+<div id="res-manual" class="resultado" role="status" aria-live="polite"></div>
+</div>
+</section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="fondo.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
