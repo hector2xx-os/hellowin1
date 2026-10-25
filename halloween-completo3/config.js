@@ -4,6 +4,6 @@
 // la seguridad la dan las reglas de la base de datos, no esconder esta clave.
 // NUNCA pegues aquí la clave "secret" ni "service_role".
 window.CONFIG_SUPABASE = {
-  url: 'https://sfswmlfsrindnvqoohye.supabase.co',
+  url: 'https://sfswmlfsrisupabase.co',
   anonKey: 'sb_publishablea54yg_c9qUjLQt'
 };
