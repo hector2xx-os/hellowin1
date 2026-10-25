@@ -5,5 +5,5 @@
 // NUNCA pegues aquí la clave "secret" ni "service_role".
 window.CONFIG_SUPABASE = {
   url: 'https://sfswmlfsrindnvqoohye.supabase.co',
-  anonKey: 'sb_publishable_dffE0y7a_KSe-baE4a54yg_c9qUjLQt'
+  anonKey: 'sb_publishablea54yg_c9qUjLQt'
 };
